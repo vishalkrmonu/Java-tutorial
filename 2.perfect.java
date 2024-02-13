@@ -24,7 +24,7 @@ class Day2 {
             System.out.println(" no perfect number");
 
         }
-        System.out.println("the sum of factor " + s);
+        System.out.println("the sum of factor is" + s);
         System.out.println("the count of factor " + c);
         if (c == 1) {
             System.out.println(" number is prime number");
