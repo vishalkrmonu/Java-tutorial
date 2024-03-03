@@ -1,36 +1,32 @@
 import java.util.Scanner;
 
 class Day2 {
-    public static void main(String[] args) {
-        int i, n, s = 0, c = 0;
-        Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
-        System.out.println("the factor of " + n + " is");
-        for (i = 1; i <= n / 2; i++) {
+    public static void perfect(int n) {
+        int sum = 0,c=0;
+        for (int i = 1; i <= n / 2; i++) {
             if (n % i == 0) {
-                System.out.println(i);
-                s = s + i;
-                c = c + 1;
+                sum = sum + i;
+                c++;
             }
         }
-        if (n % 2 == 0) {
-            System.out.println("number is even");
-        } else {
-            System.out.println("number is odd");
-        }
-        if (s == n) {
-            System.out.println("perfect number" + n);
-        } else {
-            System.out.println(" no perfect number");
+        if(c==1)
+        System.out.println("number is prime");
+        else
+        System.out.println("number is not prime");
+        System.out.println("sum of factor is = " +sum);
+        System.out.println("sum of factor is = " +c);
 
+        if (n == sum) {
+            System.out.println("number is perfect");
         }
-        System.out.println("the sum of factor is" + s);
-        System.out.println("the count of factor " + c);
-        if (c == 1) {
-            System.out.println(" number is prime number");
-        } else {
-            System.out.println(" no prime number");
+        else{
+            System.out.println("number is not perfect");
         }
+    }
 
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        perfect(n);
     }
 }
